@@ -8,7 +8,7 @@ const Timeline = () => {
     const getMyTimeline = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/timeline/getall",
+          "https://backend-folio-ten.vercel.app/api/v1/timeline/getall",
           { withCredentials: true }
         );
         console.log("Timeline data:", data); // Debug log

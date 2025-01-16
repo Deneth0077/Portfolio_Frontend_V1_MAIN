@@ -211,7 +211,7 @@ const Komentar = () => {
   const fetchComments = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/message/getall",
+        "https://backend-folio-ten.vercel.app/api/v1/message/getall",
         { withCredentials: true }
       );
       setComments(response.data.messages);
@@ -234,7 +234,7 @@ const Komentar = () => {
         if (imageFile) formData.append("profileImage", imageFile);
 
         await axios.post(
-          "http://localhost:4000/api/v1/message/send",
+          "https://backend-folio-ten.vercel.app/api/v1/message/send",
           formData,
           {
             withCredentials: true,

@@ -81,7 +81,6 @@ const techStacks = [
   { icon: "mongodb-svgrepo-com.svg", language: "MongoDB" },
   { icon: "vercel.svg", language: "Vercel" },
   // { icon: "bootstrap.svg", language: "Bootstrap" },
- 
 ];
 
 const TechBadge = ({ tech }) => {
@@ -110,7 +109,7 @@ const Portfolio = () => {
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/project/getall",
+        "https://backend-folio-ten.vercel.app/api/v1/project/getall",
         { withCredentials: true }
       );
       setProjects(data.projects);
@@ -285,27 +284,30 @@ const Portfolio = () => {
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-  {/* Certificates Section */}
-  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {certificates.map((certificate, index) => (
-      <div key={index} className="overflow-hidden transition-shadow duration-300 border shadow-lg hover:shadow-xl bg-white/5 backdrop-blur-xl border-white/10 hover:border-white/20">
-        <img
-          src={certificate.Img}
-          alt={certificate.name}
-          className="object-cover w-full h-48"
-        />
-        <div className="p-6">
-          <h2 className="mb-2 text-2xl font-bold text-white/90">
-            {certificate.name}
-          </h2>
-          {/* Add more details if needed */}
+        {/* Certificates Section */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {certificates.map((certificate, index) => (
+            <div
+              key={index}
+              className="overflow-hidden transition-shadow duration-300 border shadow-lg hover:shadow-xl bg-white/5 backdrop-blur-xl border-white/10 hover:border-white/20"
+            >
+              <img
+                src={certificate.Img}
+                alt={certificate.name}
+                className="object-cover w-full h-48"
+              />
+              <div className="p-6">
+                <h2 className="mb-2 text-2xl font-bold text-white/90">
+                  {certificate.name}
+                </h2>
+                {/* Add more details if needed */}
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
 
-  <MyApps />
-</TabPanel>
+        <MyApps />
+      </TabPanel>
 
       <TabPanel value={value} index={2}>
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-6">

@@ -48,7 +48,7 @@ const ContactPage = () => {
 
       // Send the message using the API
       const response = await axios.post(
-        "http://localhost:4000/api/v1/message/send",
+        "https://backend-folio-ten.vercel.app/api/v1/message/send",
         { senderName: name, subject: email, message },
         {
           withCredentials: true,
