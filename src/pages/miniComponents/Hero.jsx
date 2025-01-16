@@ -183,7 +183,7 @@ const Hero = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  Creating an Innovative, Functional, and User-Friendly Website for Digital Solutions.
                 </p>
 
                 {/* Tech Stack */}
