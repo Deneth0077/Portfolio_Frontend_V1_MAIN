@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import ProjectView from "./pages/ProjectView";
 import Footer from "./pages/miniComponents/Footer";
-import WelcomeScreen from "./Pages/WelcomeScreen";
+import WelcomeScreen from "@/pages/WelcomeScreen";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
