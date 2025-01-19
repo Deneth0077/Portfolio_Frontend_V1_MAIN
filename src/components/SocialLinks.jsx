@@ -39,16 +39,16 @@ const socialLinks = [
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@khd",
+    subText: "@deneth0077",
     icon: Github,
     url: "https://github.com/Deneth0077",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]",
   },
   {
-    name: "TikTok",
-    displayName: "Tiktok",
-    subText: "@kdh",
+    name: "Email",
+    displayName: "Email",
+    subText: "chathurangakhd@gmail.com",
     icon: ({ className, ...props }) => (
       <svg
         width="24px"
