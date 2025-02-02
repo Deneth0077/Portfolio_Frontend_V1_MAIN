@@ -238,50 +238,50 @@ const Portfolio = () => {
       </AppBar>
 
       {/* Tab Panels */}
-      <TabPanel value={value} index={0}>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <Link to={`/project/${project._id}`} key={project._id}>
-              <Card className="overflow-hidden transition-shadow duration-300 border shadow-lg hover:shadow-xl bg-white/5 backdrop-blur-xl border-white/10 hover:border-white/20">
-                <img
-                  src={project.projectBanner?.url}
-                  alt={project.title}
-                  className="object-cover w-full h-48"
-                />
-                <div className="p-6">
-                  <h2 className="mb-2 text-2xl font-bold text-white/90">
-                    {project.title}
-                  </h2>
-                  <p className="mb-4 text-gray-300/90">
-                    {expandedDescriptions[project._id]
-                      ? project.description
-                      : truncateDescription(project.description)}
-                  </p>
-                  {project.description.split(" ").length > 30 && (
-                    <Button
-                      variant="link"
-                      className="p-0 text-blue-400 hover:text-blue-300"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleDescription(project._id);
-                      }}
-                    >
-                      {expandedDescriptions[project._id]
-                        ? "See Less"
-                        : "See More"}
-                    </Button>
-                  )}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.TechStack?.map((tech, index) => (
-                      <TechBadge key={index} tech={tech} />
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </TabPanel>
+<TabPanel value={value} index={0}>
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {projects.map((project) => (
+      <Link to={`/project/${project._id}`} key={project._id}>
+        <Card className="flex flex-col overflow-hidden transition-shadow duration-300 border shadow-lg hover:shadow-xl bg-white/5 backdrop-blur-xl border-white/10 hover:border-white/20 h-full">
+          <img
+            src={project.projectBanner?.url}
+            alt={project.title}
+            className="object-cover w-full h-48"
+          />
+          <div className="flex flex-col flex-grow p-6">
+            <h2 className="mb-2 text-2xl font-bold text-white/90">
+              {project.title}
+            </h2>
+            <p className="mb-4 text-gray-300/90 flex-grow">
+              {expandedDescriptions[project._id]
+                ? project.description
+                : truncateDescription(project.description)}
+            </p>
+            {project.description.split(" ").length > 30 && (
+              <Button
+                variant="link"
+                className="p-0 text-blue-400 hover:text-blue-300 self-start"
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleDescription(project._id);
+                }}
+              >
+                {expandedDescriptions[project._id]
+                  ? "See Less"
+                  : "See More"}
+              </Button>
+            )}
+            <div className="flex flex-wrap gap-2 mt-4">
+              {project.TechStack?.map((tech, index) => (
+                <TechBadge key={index} tech={tech} />
+              ))}
+            </div>
+          </div>
+        </Card>
+      </Link>
+    ))}
+  </div>
+</TabPanel>
 
       <TabPanel value={value} index={1}>
         {/* Certificates Section */}
